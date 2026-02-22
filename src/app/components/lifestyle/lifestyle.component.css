@@ -167,3 +167,19 @@
   color: rgba(255,255,255,0.7);
   border: 1px solid rgba(255,255,255,0.08);
 }
+
+.pdf-button {
+  margin-top: 30px;
+  padding: 10px 25px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #00c8ff, #5c3d99);
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.pdf-button:hover {
+  transform: translateY(-3px);
+}

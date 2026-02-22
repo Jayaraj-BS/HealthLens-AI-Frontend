@@ -1,1 +1,105 @@
-<p>report works!</p>
+<div class="report-container">
+
+  <h2>Medical Report Simplifier</h2>
+
+  <!-- Input Section -->
+  <div class="report-input-card">
+
+    <textarea placeholder="Paste your medical lab report here..." [(ngModel)]="reportText">
+    </textarea>
+
+    <div class="button-row">
+      <button class="ai-button" (click)="simplifyReport()" [disabled]="loading">
+        {{ loading ? 'Analyzing Report...' : 'Simplify Report' }}
+      </button>
+
+      <button class="secondary-button" (click)="gotoHome()">
+        Back to Home
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Loader -->
+  <app-loader *ngIf="loading"></app-loader>
+
+  <!-- Results Dashboard -->
+  <div *ngIf="result && !loading" class="report-glass-card fade-in">
+
+    <!-- HEADER -->
+    <div class="report-header">
+      <h2>Medical Report Analysis</h2>
+
+      <div class="risk-summary">
+        <span class="severity-badge" [ngClass]="result.severity.toLowerCase()">
+          {{ result.severity }} Risk
+        </span>
+
+        <span class="abnormal-count">
+          {{ result.abnormalCount }} Abnormal Markers
+        </span>
+      </div>
+    </div>
+
+    <!-- OVERALL ASSESSMENT -->
+    <div class="section-block">
+      <h3>Overall Assessment</h3>
+      <p>{{ result.overallAssessment }}</p>
+    </div>
+
+    <!-- MARKERS -->
+    <div class="section-block">
+      <h3>Lab Markers</h3>
+
+      <div *ngFor="let marker of result.markers" class="marker-row">
+
+        <div class="marker-top">
+          <div class="marker-name">
+            {{ marker.name }}
+          </div>
+
+          <div class="marker-status" [ngClass]="marker.status.toLowerCase()">
+            {{ marker.status }}
+          </div>
+        </div>
+
+        <div class="marker-value">
+          {{ marker.value }}
+        </div>
+
+        <p class="marker-explanation">
+          {{ marker.explanation }}
+        </p>
+
+        <ul class="suggestions">
+          <li *ngFor="let s of marker.lifestyleSuggestions">
+            {{ s }}
+          </li>
+        </ul>
+
+        <hr>
+      </div>
+    </div>
+
+    <!-- DOCTOR QUESTIONS -->
+    <div class="section-block">
+      <h3>Questions for Doctor</h3>
+      <ul>
+        <li *ngFor="let q of result.doctorQuestions">
+          {{ q }}
+        </li>
+      </ul>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div class="disclaimer">
+      {{ result.disclaimer }}
+    </div>
+
+    <button class="pdf-button" (click)="exportReportPDF()">
+      Download Report (PDF)
+    </button>
+
+  </div>
+
+</div>

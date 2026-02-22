@@ -16,7 +16,7 @@
     {{ loading ? 'Analyzing with AI...' : 'Analyze Now' }}
   </button>
 
-  <button class="ai-button" (click)="gotoHome()">
+  <button class="secondary-button" (click)="gotoHome()">
     Back to Home
   </button>
 
@@ -75,6 +75,10 @@
     <div class="disclaimer">
       ⚕️ {{ result.disclaimer }}
     </div>
+
+    <button class="pdf-button" (click)="exportLifestylePDF()">
+      Download Report (PDF)
+    </button>
 
   </div>
 

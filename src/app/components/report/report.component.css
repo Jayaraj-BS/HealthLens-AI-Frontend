@@ -1,0 +1,189 @@
+.report-container {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 40px;
+}
+
+.report-input-card {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(18px);
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+
+textarea {
+  width: 100%;
+  height: 180px;
+  padding: 15px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.08);
+  color: white;
+  resize: none;
+}
+
+.button-row {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+
+
+
+.report-glass-card {
+  margin: 60px auto;
+  padding: 50px;
+  max-width: 1000px;
+  width: 90%;
+
+  border-radius: 30px;
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.95);
+}
+
+/* Header */
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.risk-summary {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.severity-badge {
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.severity-badge.low {
+  background: rgba(0,245,160,0.2);
+  color: #00f5a0;
+}
+
+.severity-badge.moderate {
+  background: rgba(255,179,71,0.2);
+  color: #ffb347;
+}
+
+.severity-badge.high {
+  background: rgba(255,75,43,0.2);
+  color: #ff4b2b;
+}
+
+.abnormal-count {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Sections */
+.section-block {
+  margin-bottom: 40px;
+}
+
+.section-block h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Marker styling */
+.marker-row {
+  margin-bottom: 25px;
+}
+
+.marker-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.marker-name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.marker-status {
+  padding: 4px 12px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.marker-status.low {
+  background: rgba(0,245,160,0.2);
+  color: #00f5a0;
+}
+
+.marker-status.normal {
+  background: rgba(0,200,255,0.2);
+  color: #00c8ff;
+}
+
+.marker-status.high {
+  background: rgba(255,75,43,0.2);
+  color: #ff4b2b;
+}
+
+.marker-value {
+  margin: 6px 0;
+  font-weight: 500;
+}
+
+.marker-explanation {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-bottom: 10px;
+}
+
+.suggestions {
+  padding-left: 18px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 20px;
+}
+
+/* Disclaimer */
+.disclaimer {
+  font-size: 13px;
+  opacity: 0.7;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.pdf-button {
+  margin-top: 30px;
+  padding: 10px 25px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #00c8ff, #5c3d99);
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.pdf-button:hover {
+  transform: translateY(-3px);
+}

@@ -265,3 +265,11 @@ footer {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+.secondary-button {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+}
