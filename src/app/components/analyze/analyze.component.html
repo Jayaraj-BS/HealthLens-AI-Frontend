@@ -1,0 +1,52 @@
+<div class="container">
+
+  <h2>ETA Discrepancy Copilot</h2>
+
+  <div class="form-card">
+    <label>Movement Shareable Link</label>
+    <input type="text" [(ngModel)]="shareableLink" placeholder="https://movement.link/shipment123">
+
+    <label>Carrier</label>
+    <select [(ngModel)]="carrier">
+      <option *ngFor="let c of carriers" [value]="c">{{c}}</option>
+    </select>
+
+    <label>Carrier ETA</label>
+    <input type="date" [(ngModel)]="carrierETA">
+
+    <button (click)="analyze()" [disabled]="loading">
+      {{ loading ? 'Analyzing...' : 'Analyze' }}
+    </button>
+  </div>
+
+  <div *ngIf="result" class="result-card">
+
+    <h3>Analysis Result</h3>
+
+    <p><strong>Discrepancy Level:</strong> {{result.discrepancyLevel}}</p>
+    <p><strong>Root Cause:</strong> {{result.rootCause}}</p>
+    <p><strong>Confidence Score:</strong> {{result.confidenceScore}}%</p>
+    <p><strong>Escalation:</strong> {{result.escalation}}</p>
+
+    <hr>
+
+    <p><strong>Explanation Summary:</strong></p>
+    <p>{{result.explanationSummary}}</p>
+
+    <hr>
+
+    <p><strong>Customer Message:</strong></p>
+    <p>{{result.customerMessage}}</p>
+
+    <hr>
+
+    <p><strong>Investigation Checklist:</strong></p>
+    <ul>
+      <li *ngFor="let item of result.investigationChecklist">
+        {{item}}
+      </li>
+    </ul>
+
+  </div>
+
+</div>

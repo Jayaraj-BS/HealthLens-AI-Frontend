@@ -1,0 +1,53 @@
+<div class="landing">
+
+  <!-- Hero Section -->
+  <section class="hero">
+
+    <div class="hero-image">
+      <img src="/mainIcon.png" alt="HealthLens AI Preview">
+    </div>
+
+    <div class="hero-text">
+      <h1>HealthLens AI</h1>
+
+      <p class="hero-subtitle">
+        AI-Powered Health Intelligence Platform
+      </p>
+
+      <p class="hero-description">
+        Transform lifestyle inputs into structured risk insights.
+        Get actionable recommendations, simplified reports,
+        and AI-driven health clarity — all in one place.
+      </p>
+
+      <div class="explore-hint" (click)="scrollToTools()">
+        <span>Below are the tools — explore</span>
+        <span class="arrow">↓</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="feature-card" (click)="gotoLifestyle()">
+      <h3>AI Risk Prediction</h3>
+      <p>Analyze lifestyle patterns with structured scoring.</p>
+    </div>
+
+    <div class="feature-card" (click)="gotoReports()">
+      <h3>Report Simplifier</h3>
+      <p>Turn complex lab data into easy insights.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Structured Insights</h3>
+      <p>Clean JSON-driven health intelligence.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 HealthLens AI · Privacy First · No Data Stored</p>
+  </footer>
+
+</div>

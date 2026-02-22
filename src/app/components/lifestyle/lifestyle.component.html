@@ -1,0 +1,81 @@
+<div class="glass-card lifestyle">
+
+  <h2>AI Lifestyle Risk Analyzer</h2>
+
+  <div class="form-grid">
+    <input type="number" placeholder="Age" [(ngModel)]="form.age">
+    <input type="number" placeholder="Sleep Hours" [(ngModel)]="form.sleep">
+    <input type="number" placeholder="Daily Steps" [(ngModel)]="form.steps">
+    <input type="number" placeholder="Water Intake (Liters)" [(ngModel)]="form.water">
+    <input type="number" placeholder="Junk Food (per week)" [(ngModel)]="form.junk">
+    <input type="number" placeholder="Stress Level (1-10)" [(ngModel)]="form.stress">
+    <input type="number" placeholder="Exercise Days per Week" [(ngModel)]="form.exercise">
+  </div>
+
+  <button class="ai-button me-3" style="margin-right: 15px;" (click)="analyze()" [disabled]="loading">
+    {{ loading ? 'Analyzing with AI...' : 'Analyze Now' }}
+  </button>
+
+  <button class="ai-button" (click)="gotoHome()">
+    Back to Home
+  </button>
+
+  <app-loader *ngIf="loading"></app-loader>
+  <!-- <app-loader></app-loader> -->
+
+
+  <!-- RESULT DISPLAY  -->
+  <div *ngIf="result && !loading" class="result-card fade-in">
+
+    <div class="score-wrapper">
+      <div class="score-circle" [ngClass]="result.riskColor">
+        {{ result.riskScore }}
+      </div>
+
+      <h3 class="risk-label" [ngClass]="'severity-' + result.riskLevel.toLowerCase()">
+        {{ result.riskLevel }} Risk
+      </h3>
+    </div>
+
+    <p class="summary">{{ result.summary }}</p>
+
+    <!-- Key Risks -->
+    <div class="section">
+      <h4><span class="section-icon">⚠️</span> Key Risks</h4>
+      <ul>
+        <li *ngFor="let risk of result.keyRisks">
+          <span class="bullet-icon">•</span>
+          {{ risk }}
+        </li>
+      </ul>
+    </div>
+
+    <!-- Suggestions -->
+    <div class="section">
+      <h4><span class="section-icon">💡</span> Suggestions</h4>
+      <ul>
+        <li *ngFor="let s of result.suggestions">
+          <span class="bullet-icon">✓</span>
+          {{ s }}
+        </li>
+      </ul>
+    </div>
+
+    <!-- Prevention Advice -->
+    <div class="section">
+      <h4><span class="section-icon">🛡️</span> Prevention Advice</h4>
+      <ul>
+        <li *ngFor="let s of result.preventiveAdvice">
+          <span class="bullet-icon">✔</span>
+          {{ s }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="disclaimer">
+      ⚕️ {{ result.disclaimer }}
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,30 @@
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+}
+
+.form-card, .result-card {
+  background: #f4f6f8;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  background: #1f3c88;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: gray;
+}
