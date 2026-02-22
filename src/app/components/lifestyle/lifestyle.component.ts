@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LoaderComponent } from '../../helpers/loader/loader.component';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 import jsPDF from 'jspdf';
 
 @Component({
@@ -18,7 +19,7 @@ export class LifestyleComponent {
   constructor(private http: HttpClient, private router: Router) { }
 
   // Backend URL (change when deployed)
-  private baseUrl = 'http://localhost:3001';
+  private baseUrl = environment.apiUrl;
 
   loading = false;
 

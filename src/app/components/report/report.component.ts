@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoaderComponent } from '../../helpers/loader/loader.component';
+import { environment } from '../../environments/environment';
 import jsPDF from 'jspdf';
 
 @Component({
@@ -18,7 +19,7 @@ export class ReportComponent {
   constructor(private http: HttpClient,
     private router: Router) { }
 
-  private baseUrl = 'http://localhost:3001';
+    private baseUrl = environment.apiUrl;
 
   reportText = '';
   loading = false;
